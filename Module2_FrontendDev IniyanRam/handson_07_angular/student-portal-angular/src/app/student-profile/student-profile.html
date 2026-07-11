@@ -1,0 +1,44 @@
+<h2>Student Profile</h2>
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+  <label>Name</label><br>
+  <input type="text" formControlName="name">
+
+  <div *ngIf="profileForm.get('name')?.touched && profileForm.get('name')?.invalid">
+    Name is required
+  </div>
+
+  <br><br>
+
+  <label>Email</label><br>
+  <input type="email" formControlName="email">
+
+  <div *ngIf="profileForm.get('email')?.touched && profileForm.get('email')?.invalid">
+
+    <span *ngIf="profileForm.get('email')?.errors?.['required']">
+      Email is required
+    </span>
+
+    <span *ngIf="profileForm.get('email')?.errors?.['email']">
+      Enter a valid email
+    </span>
+
+  </div>
+
+  <br><br>
+
+  <label>Semester</label><br>
+  <input type="number" formControlName="semester">
+
+  <div *ngIf="profileForm.get('semester')?.touched && profileForm.get('semester')?.invalid">
+    Semester must be between 1 and 8
+  </div>
+
+  <br><br>
+
+  <button type="submit" [disabled]="profileForm.invalid">
+    Submit
+  </button>
+
+</form>
