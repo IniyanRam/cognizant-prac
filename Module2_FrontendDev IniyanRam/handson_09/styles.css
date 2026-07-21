@@ -1,0 +1,267 @@
+/* Basic reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f5fc;
+    color: #333;
+}
+
+/* Header */
+
+header {
+    background-color: #7e57c2;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.site-title {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu-text {
+    display: block;
+}
+
+.nav-item {
+    display: none;
+}
+
+/* Hero */
+
+#hero {
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+#hero p {
+    margin: 15px 0;
+    max-width: 600px;
+}
+
+button {
+    padding: 10px 20px;
+    border: 1px solid #7e57c2;
+    background-color: white;
+    color: #7e57c2;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7e57c2;
+    color: white;
+}
+
+/* Stats */
+
+.stats-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.stat-item {
+    background-color: white;
+    border: 1px solid #7e57c2;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Courses */
+
+#courses {
+    padding: 30px 20px;
+}
+
+#courses h2 {
+    margin-bottom: 20px;
+}
+
+/* Search and Sort */
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+#search-courses {
+    padding: 10px;
+    border: 1px solid #7e57c2;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.course-card {
+    background-color: white;
+    border: 1px solid #7e57c2;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 180px;
+    align-self: stretch;
+    box-shadow: 0 2px 8px rgba(126, 87, 194, 0.15);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.course-card:hover {
+    transform: translateY(-3px);
+}
+
+.course-card p {
+    margin: 10px 0;
+}
+
+.course-card span {
+    font-weight: bold;
+    color: #7e57c2;
+}
+
+#total-credits {
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#selected-course {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #7e57c2;
+    border-radius: 8px;
+}
+
+/* Footer */
+
+footer {
+    background-color: #7e57c2;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+/* Tablet */
+
+@media (min-width: 768px) {
+
+    .stats-bar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .stat-item {
+        flex: 1;
+    }
+
+    .controls {
+        flex-direction: row;
+    }
+
+    #search-courses {
+        flex: 1;
+    }
+
+    .menu-text {
+        display: none;
+    }
+
+    .nav-item {
+        display: block;
+    }
+
+    .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop */
+
+@media (min-width: 1024px) {
+
+    #hero {
+        padding: 90px 20px;
+    }
+
+    .course-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Task 131 - Mobile Navigation */
+
+.menu-toggle {
+    display: block;
+    padding: 10px 15px;
+    border: 1px solid #7e57c2;
+    border-radius: 5px;
+    background: white;
+    color: #7e57c2;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+@media (max-width: 767px) {
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-text {
+        display: none;
+    }
+
+    .nav-item {
+        display: block;
+    }
+
+}
+@media (min-width: 768px) {
+
+    .menu-toggle {
+        display: none;
+    }
+
+}
